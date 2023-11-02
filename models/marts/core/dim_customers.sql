@@ -2,7 +2,7 @@
 
 with customers as (
 
-    select * from {{source ('jaffle_shop','customers')}}
+    select * from {{ ref ('stg_customers') }}
 
 ),
 
@@ -42,7 +42,7 @@ final as (
 
     from customers
 
-    left join customer_orders using (customer_id)
+    left join customer_orders ON customers.customer_id = customer_orders.customer_id
 
 )
 
