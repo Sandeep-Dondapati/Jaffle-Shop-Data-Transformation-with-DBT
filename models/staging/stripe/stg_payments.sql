@@ -6,4 +6,4 @@ SELECT
     status,
     created as created_at
 
-FROM dbt-learn-bigquery-403813.stripe.payments 
+FROM {{ source ('stripe','payments') }} 

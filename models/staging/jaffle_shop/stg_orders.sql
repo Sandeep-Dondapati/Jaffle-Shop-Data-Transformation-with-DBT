@@ -4,4 +4,4 @@ SELECT
     order_date,
     status
 
- FROM dbt-learn-bigquery-403813.jaffle_shop.orders
+ FROM {{ source ('jaffle_shop','orders') }}

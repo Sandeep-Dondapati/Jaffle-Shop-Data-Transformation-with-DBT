@@ -2,7 +2,7 @@
 
 with customers as (
 
-    select * from {{ ref ('stg_customers') }}
+    select * from {{source ('jaffle_shop','customers')}}
 
 ),
 

@@ -1,0 +1,7 @@
+version: 2
+
+sources:
+  - name: stripe
+    database: dbt-learn-bigquery-403813
+    tables:
+      - name: payments
