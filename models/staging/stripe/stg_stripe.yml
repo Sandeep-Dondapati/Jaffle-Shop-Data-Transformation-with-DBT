@@ -1,0 +1,20 @@
+version: 2
+
+models:
+  - name: stg_payments
+    columns:
+      - name: payment_id
+        tests:
+          - unique
+          - not_null
+      - name: order_id
+        tests:
+          - relationships:
+              field: order_id
+              to: ref('stg_orders')
+      - name: status
+        tests:
+          - accepted_values:
+              values:
+                - success
+                - fail
