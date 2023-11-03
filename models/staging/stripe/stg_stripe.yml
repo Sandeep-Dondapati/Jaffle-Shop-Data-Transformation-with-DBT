@@ -2,17 +2,21 @@ version: 2
 
 models:
   - name: stg_payments
+    description: Staged payment data from jaffle shop app
     columns:
       - name: payment_id
+        description: primargy key for payments
         tests:
           - unique
           - not_null
       - name: order_id
+        description: foreign key to  stg_orders.order_id
         tests:
           - relationships:
               field: order_id
               to: ref('stg_orders')
       - name: status
+        description: '{{ doc ("status") }}'
         tests:
           - accepted_values:
               values:
