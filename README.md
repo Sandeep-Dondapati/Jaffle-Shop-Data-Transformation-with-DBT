@@ -70,13 +70,17 @@ models:
   - name: fact_payments
     tests:
       - assert_positive_value_for_total_amount
+```
+
 
 To run this specific test, execute:
 
 ```bash
 dbt test --select assert_positive_value_for_total_amount
+```
 
 Both these tests are specified in the `schema.yml` file associated with each model and are run using:
 
 ```bash
 dbt test
+```
